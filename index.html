@@ -402,15 +402,17 @@ body.light-theme {
         }
 
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyBoGLwgT8_vSnnVAH1dk7o4S9cRGk7qxCc",
-            authDomain: "zerochat-0.firebaseapp.com",
-            projectId: "zerochat-0",
-            storageBucket: "zerochat-0.firebasestorage.app",
-            messagingSenderId: "219428482363",
-            appId: "1:219428482363:web:fdd74b9e80f4089deddb1e",
-            measurementId: "G-K9QYSYE2TN"
-        };
+       const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "SENDER_ID",
+  appId: "APP_ID"
+};
+firebase.initializeApp(firebaseConfig);
+
 
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
