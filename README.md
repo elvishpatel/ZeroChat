@@ -25,14 +25,6 @@ ZeroChat is a **real-time**, **end-to-end encrypted** chat application built usi
 
 ---
 
-## 📸 Demo Screenshots
-
-| Login & Signup | Chat Interface |
-|----------------|----------------|
-|  |
-
----
-
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
