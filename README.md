@@ -7,6 +7,8 @@ ZeroChat is a **real-time**, **end-to-end encrypted** chat application built usi
 ---
 ## 🚀 Live Demo
 
+![screenshot](![6](https://github.com/user-attachments/assets/0cfb19d6-6f83-4816-a04e-1b4648291a22)
+)
 🔗 Try out **ZeroChat** live here : (https://zeorchat-by-elvish.netlify.app)
 
 ---
