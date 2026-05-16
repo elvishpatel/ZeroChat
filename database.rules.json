@@ -1,0 +1,50 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      ".read": "auth != null",
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+    "presence": {
+      ".read": "auth != null",
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+    "conversations": {
+      "$cid": {
+        ".read": "auth != null && data.child('members').child(auth.uid).val() === true",
+        ".write": "auth != null && (data.child('members').child(auth.uid).val() === true || newData.child('members').child(auth.uid).val() === true)"
+      }
+    },
+    "messages": {
+      "$cid": {
+        ".read": "auth != null && root.child('conversations').child($cid).child('members').child(auth.uid).val() === true",
+        ".indexOn": ["to", "expiresAt"],
+        "$mid": {
+          ".write": "auth != null && root.child('conversations').child($cid).child('members').child(auth.uid).val() === true"
+        }
+      }
+    },
+    "userChats": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".indexOn": ["updatedAt"],
+        "$peer": {
+          ".write": "auth != null && (auth.uid === $uid || auth.uid === $peer)"
+        }
+      }
+    },
+    "typing": {
+      "$cid": {
+        ".read": "auth != null && root.child('conversations').child($cid).child('members').child(auth.uid).val() === true",
+        "$uid": {
+          ".write": "auth != null && auth.uid === $uid && root.child('conversations').child($cid).child('members').child(auth.uid).val() === true"
+        }
+      }
+    }
+  }
+}
